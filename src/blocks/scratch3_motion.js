@@ -304,3 +304,4 @@ class Scratch3MotionBlocks {
 }
 
 module.exports = Scratch3MotionBlocks;
+
