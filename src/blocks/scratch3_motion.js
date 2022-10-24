@@ -22,6 +22,8 @@ class Scratch3MotionBlocks {
             motion_goto: this.goTo,
             motion_turnright: this.turnRight,
             motion_turnleft: this.turnLeft,
+            motion_turnrightturnangle: this.turnRightTurnAngle,
+            motion_turnleftturnangle: this.turnLeftTurnAngle,
             motion_pointindirection: this.pointInDirection,
             motion_pointtowards: this.pointTowards,
             motion_glidesecstoxy: this.glide,
@@ -113,6 +115,16 @@ class Scratch3MotionBlocks {
 
     turnLeft (args, util) {
         const degrees = Cast.toNumber(args.DEGREES);
+        util.target.setDirection(util.target.direction - degrees);
+    }
+    
+    turnRightTurnAngle (args, util) {
+        const degrees = Cast.toNumber(args.DEGREES * 360);
+        util.target.setDirection(util.target.direction + degrees);
+    }
+
+    turnLeftTurnAngle (args, util) {
+        const degrees = Cast.toNumber(args.DEGREES * 360);
         util.target.setDirection(util.target.direction - degrees);
     }
 
